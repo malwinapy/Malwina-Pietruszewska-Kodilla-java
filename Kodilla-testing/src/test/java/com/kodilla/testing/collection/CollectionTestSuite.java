@@ -31,19 +31,34 @@ public class CollectionTestSuite<expectedList, evenNumbersList> {
     @Test
     void testOddNumbersExterminatorNormalList() {
         //Given
-        Integer [] exampleList = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        List <Integer> example = Arrays.asList(exampleList);
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(example);
-        Integer evenNumbers [] = new Integer [] {2,4,6,8,10};
-        List<Integer> evenNumbersList = (ArrayList<Integer>) Arrays.asList(evenNumbers);
+        OddNumbersExterminator numbersExterminator = new OddNumbersExterminator();
+        Integer [] example = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        List <Integer> exampleList = Arrays.asList(example);
+        Integer [] evenNumbers = new Integer [] {2,4,6,8,10};
+        List <Integer> evenNumbersList = Arrays.asList(evenNumbers);
 
         //When
-        ArrayList<Integer> expectedList = oddNumbersExterminator.exterminate(example);
+        List<Integer> expectedList = numbersExterminator.exterminate(evenNumbersList);
+        List<Integer> resultList = numbersExterminator.exterminate(exampleList);
         //Then
-        Assertions.assertEquals(evenNumbersList, expectedList);
+        Assertions.assertEquals(resultList, expectedList);
+    }
+
+    @DisplayName("Testing empty list")
+
+    @Test
+    void testOddNumbersExterminatorEmptyList() {
+        //Given
+        OddNumbersExterminator numbersExterminator = new OddNumbersExterminator();
+        Integer [] empty = new Integer[] {};
+        List <Integer> emptyList = Arrays.asList(empty);
+        Integer [] even = new Integer [] {2,4,6,8,10};
+        List <Integer> evenNumbersList = Arrays.asList(even);
+
+        //When
+        List<Integer> expList = numbersExterminator.exterminate(evenNumbersList);
+        List<Integer> resList = numbersExterminator.exterminate(emptyList);
+        //Then
+        Assertions.assertEquals(resList, expList);
     }
 }
-
-
-
-
