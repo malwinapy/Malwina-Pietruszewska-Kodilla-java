@@ -3,6 +3,7 @@ package com.kodilla.testing.weather.mock;
 import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -19,9 +20,8 @@ class WeatherForecastTestSuite {
     @Mock
     private Temperatures temperaturesMock;
 
-    @Test
-    void testCalculateForecastWithMock() {
-        //Given
+    @BeforeEach
+    public void before(){
         Map<String, Double> temperaturesMap = new HashMap<>();
         temperaturesMap.put("Rzeszow", 25.5);
         temperaturesMap.put("Krakow", 26.2);
@@ -29,6 +29,11 @@ class WeatherForecastTestSuite {
         temperaturesMap.put("Warszawa", 25.2);
         temperaturesMap.put("Gdansk", 26.1);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+    }
+
+    @Test
+    void testCalculateForecastWithMock() {
+        //Given
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
@@ -36,5 +41,27 @@ class WeatherForecastTestSuite {
 
         //Then
         Assertions.assertEquals(5, quantityOfSensors);
+    }
+    @Test
+    void testAverageValueTemperatures() {
+        //Given
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+
+        //When
+        double expectedAvg = weatherForecast.averageValueTemperatures();
+
+        //Then
+        Assertions.assertEquals(expectedAvg, 25.56);
+    }
+    @Test
+    void testMedianOfTemperatures() {
+        //Given
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+
+        //When
+        double expectedMedian = weatherForecast.medianOfTemperatures();
+
+        //Then
+        Assertions.assertEquals(expectedMedian, 25.5);
     }
 }

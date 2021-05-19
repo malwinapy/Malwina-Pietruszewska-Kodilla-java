@@ -77,7 +77,7 @@ public class ShapeCollectorTestSuite {
         collector.addFigure(circle3);
         //When
         List<Shape> expectedList = collector.showFigures();
-        List<Shape> list = new ArrayList<Shape>();
+        List<Shape> list = new ArrayList<>();
         list.add(circle1);
         list.add(circle2);
         list.add(circle3);
