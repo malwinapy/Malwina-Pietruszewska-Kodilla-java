@@ -43,23 +43,23 @@ class WeatherForecastTestSuite {
         Assertions.assertEquals(5, quantityOfSensors);
     }
     @Test
-    void testAverageValueTemperatures() {
+    void testCalculateAverageOfTemperatures() {
         //Given
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        double expectedAvg = weatherForecast.averageValueTemperatures();
+        double expectedAvg = weatherForecast.calculateAvgTemperature();
 
         //Then
         Assertions.assertEquals(expectedAvg, 25.56);
     }
     @Test
-    void testMedianOfTemperatures() {
+    void testCalculateMedianOfTemperatures() {
         //Given
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        double expectedMedian = weatherForecast.medianOfTemperatures();
+        double expectedMedian = weatherForecast.calculateMedianTemp();
 
         //Then
         Assertions.assertEquals(expectedMedian, 25.5);

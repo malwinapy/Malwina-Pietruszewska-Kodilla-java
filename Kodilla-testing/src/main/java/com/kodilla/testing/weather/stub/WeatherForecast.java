@@ -21,19 +21,16 @@ public class WeatherForecast {
         }
         return resultMap;
     }
-    public double averageValueTemperatures() {
+    public double calculateAvgTemperature() {
 
         double sum = 0;
         for (Map.Entry<String, Double> temperature :
                 temperatures.getTemperatures().entrySet()) {
-
             sum += temperature.getValue();
-
         }
-
         return sum / temperatures.getTemperatures().size();
     }
-    public double medianOfTemperatures() {
+    public double calculateMedianTemp() {
 
         double median=0;
         List<Double> tempArray = new ArrayList<>();
