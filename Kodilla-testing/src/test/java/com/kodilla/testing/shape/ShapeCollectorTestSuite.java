@@ -48,10 +48,9 @@ public class ShapeCollectorTestSuite {
         collector.addFigure(square);
         //When
         collector.removeFigure(square);
-        int a = collector.getSize();
 
         //Then
-        Assertions.assertEquals(a,0);
+        Assertions.assertEquals(collector.getSize(),0);
     }
 
     @Test
