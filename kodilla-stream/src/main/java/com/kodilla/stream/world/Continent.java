@@ -1,34 +1,19 @@
 package com.kodilla.stream.world;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public final class Continent {
-    private final String nameContinent;
-    private final Country country;
-    private final Set<Country> countriesOnContinent = new HashSet<>();
+public class Continent {
 
-    public Continent(String nameContinent, Country country) {
-        this.nameContinent = nameContinent;
-        this.country = country;
+    private List<Country> countryList = new ArrayList<>();
+
+    public final List<Country> getCountries(){
+        return countryList;
     }
-
-    public void addCountry(Country country) {
-        countriesOnContinent.add(country);
+    public final void addCountry(Country country){
+        countryList.add(country);
     }
-
-    public boolean removeCountry(Country country) {
-        return countriesOnContinent.remove(country);
-    }
-
-    public String getNameContinent() {
-        return nameContinent;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public Set<Country> getCountriesOnContinent() {
-        return countriesOnContinent;
+    public List<Country> getCountryList() {
+        return countryList;
     }
 }
