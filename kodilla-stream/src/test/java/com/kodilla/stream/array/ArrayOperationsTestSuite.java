@@ -3,19 +3,19 @@ package com.kodilla.stream.array;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.OptionalDouble;
+
 public class ArrayOperationsTestSuite {
     @Test
     void testGetAverage(){
         //Given
-        int n = 20;
-        int[] numbers = new int [n];
-        numbers = generateArray(n);
+        int [] numbers = generateArray(20);
 
         //When
         double result = ArrayOperations.getAverage(numbers);
 
         //Then
-        Assertions.assertEquals(9.5, result, .1);
+        Assertions.assertEquals(9.5, result);
 
     }
     public int[] generateArray(int n){
