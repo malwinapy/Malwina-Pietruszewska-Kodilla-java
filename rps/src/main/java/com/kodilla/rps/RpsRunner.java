@@ -26,8 +26,7 @@ public class RpsRunner {
 
         for (int i = 1; i <= round; i++) {
 
-            String key;
-            key = scanner.nextLine();
+            String key = scanner.nextLine();
 
             Validator validator = new Validator();
             validator.validateInput(key);
