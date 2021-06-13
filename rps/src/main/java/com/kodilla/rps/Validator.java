@@ -4,24 +4,24 @@ package com.kodilla.rps;
 
 public class Validator {
 
-    private String rock = "1";
-    private String paper = "2";
-    private String scissors = "3";
+    private final String rock = "1";
+    private final String paper = "2";
+    private final String scissors = "3";
 
-    private String endGame = "x";
-    private String restartGame = "n";
+    private final String endGame = "x";
+    private final String restartGame = "n";
 
 
     public String getComputersMove() {
         String randomResult = "";
         Random random = new Random();
-        int select = random.nextInt(99);
+        int r = random.nextInt(99);
 
-        if (select >= 0 && select < 33) {
+        if (r >= 0 && r < 33) {
             randomResult = rock;
-        } else if (select >= 33 && select < 66) {
+        } else if (r>= 33 && r < 66) {
             randomResult = paper;
-        } else if (select >= 66 && select < 100) {
+        } else if (r >= 66 && r < 100) {
             randomResult = scissors;
         }
         return randomResult;
@@ -58,9 +58,9 @@ public class Validator {
                 break;
             case "3": gamerResult = "scissors";
                 break;
+            default:
+                break;
         }
-
-
         switch (computersMove) {
             case "1": computerResult = "rock";
                 break;
@@ -73,7 +73,5 @@ public class Validator {
 
         System.out.println("Your move: " + gamerResult);
         System.out.println("Computer's move: " + computerResult);
-
-
     }
 }

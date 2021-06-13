@@ -1,24 +1,19 @@
 package com.kodilla.rps;
 
-        import java.util.Scanner;
+import java.util.Scanner;
 
 public class RpsRunner {
-
-
-    public static void main (String[] args) {
-
+    public static void main (String[] args){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome in Rock-Paper-Scissors game! \n" +
+        System.out.println("Welcome to Rock-Paper-Scissors game! \n" +
                 "Please insert your name");
-        String name;
-        name = scanner.nextLine();
+        String name = scanner.nextLine();
 
         System.out.println("How many rounds do you want to play?");
-        String roundsAmount;
-        roundsAmount = scanner.nextLine();
+        String roundsAmount = scanner.nextLine();
 
-        System.out.println("Hi " + name + ".\n" +
+        System.out.println("Hallo " + name + ".\n" +
                 "Instructions: \n" +
                 "Key 1 = \"rock\" \n" +
                 "Key 2 = \"paper\" \n" +
@@ -40,7 +35,5 @@ public class RpsRunner {
             System.out.println("Round: " + i);
 
         }
-
     }
-
 }
