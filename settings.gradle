@@ -3,4 +3,5 @@ include 'Kodilla-testing'
 include 'User'
 include 'kodilla-stream'
 include 'blackjack'
+include 'kodilla-good-patterns'
 
