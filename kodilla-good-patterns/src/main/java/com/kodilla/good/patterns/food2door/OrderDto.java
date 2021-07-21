@@ -1,28 +1,21 @@
 package com.kodilla.good.patterns.food2door;
 
 public class OrderDto {
-    private User user;
-    public boolean isOrdered;
 
-    public OrderDto(User user, boolean isOrdered) {
-        this.user = user;
+    private final OrderRequest orderRequest;
+    private final boolean isOrdered;
+
+    public OrderDto(OrderRequest orderRequest, boolean isOrdered) {
+        this.orderRequest = orderRequest;
         this.isOrdered = isOrdered;
     }
 
-    public User getUser() {
-        return user;
+    public OrderRequest getOrderRequest() {
+        return orderRequest;
     }
 
     public boolean isOrdered() {
         return isOrdered;
-    }
-
-    @Override
-    public String toString() {
-        return "OrderDto{" +
-                "user=" + user +
-                ", isOrdered=" + isOrdered +
-                '}';
     }
 }
 

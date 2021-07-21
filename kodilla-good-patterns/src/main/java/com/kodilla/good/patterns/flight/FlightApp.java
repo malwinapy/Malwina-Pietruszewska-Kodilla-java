@@ -18,14 +18,15 @@ public class FlightApp {
         Set<Flight> flightsFromWarsaw = flightFinder.findFlightFromAirport("Warsaw");
         Set<Flight> flightsToBerlin = flightFinder.findFlightToAirport("Berlin");
         Set<Flight> flightsToParis = flightFinder.findFlightToAirport("Paris");
-
         Set<Flight> flightsFromWarsawToParis = flightFinder.findStopoverAirport("Warsaw", "Paris");
+
         System.out.println("Flights from Warsaw: ");
         System.out.println(flightsFromWarsaw);
         System.out.println("Flights to Berlin: ");
         System.out.println(flightsToBerlin);
-        System.out.println("Flights from Warsaw to Paris");
+        System.out.println("Flights from Warsaw to Paris:");
         System.out.println(flightsFromWarsawToParis);
+
         Set<Flight> finderConnection = flightFinder.findConnection("Warsaw", "Paris");
         System.out.println("connected flights from Warsaw to Paris");
         System.out.println(finderConnection);
