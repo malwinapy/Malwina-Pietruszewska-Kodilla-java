@@ -1,13 +1,15 @@
 package com.kodilla.exception.test;
 
 import com.fasterxml.jackson.databind.deser.impl.ReadableObjectId;
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 
 public class FlightsFinder {
+    private Object Optional;
+
     public Optional<String> findFlight(Flight flight) throws RouteNotFoundException {
         Map<String, Boolean> flightCollection = new HashMap<>();
 
@@ -20,26 +22,29 @@ public class FlightsFinder {
         flightCollection.put("Rome", false);
         flightCollection.put("Amsterdam", false);
 
-       // return Optional <String> possibleFly = flightCollection.entrySet().stream()
+        // return Optional <String> possibleFly = flightCollection.entrySet().stream()
         // .filter(f -> flight.getArrivalAirport().equals(f.getKey()))
-       //  .findFirst()
-       //  .orElseThrow(() -> new RouteNotFoundException();
+        //  .findFirst()
+        //  .orElseThrow(() -> new RouteNotFoundException();
 
 
-        Assertions.assertEquals((flight.getArrivalAirport()), f.getKey());
+        //Assertions.assertEquals((flight.getArrivalAirport()), f.getKey());
 
         for (Map.Entry<String, Boolean> map : flightCollection.entrySet()) {
-          if (map.getKey().equals(flight.getDepartureAirport())) {
-               if (map.getKey().equals(flight.getArrivalAirport()) && (map.getValue().equals(true))) {
-                  System.out.println("Flight from: " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport());
-                   System.out.println("Flight available");
-                 System.out.println(" ");
-              }
-            }else {
-                   System.out.println("Flight from: " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport());
-                   throw new RouteNotFoundException();
-              }
+            if (map.getKey().equals(flight.getDepartureAirport())) {
+                if (map.getKey().equals(flight.getArrivalAirport()) && (map.getValue().equals(true))) {
+                    System.out.println("Flight from: " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport());
+                    System.out.println("Flight available");
+                    System.out.println(" ");
+                } else {
+                    System.out.println("Flight from: " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport());
+                    throw new RouteNotFoundException();
+                }
             }
 
+        }
+        return Optional ;
     }
+}
 
+    
